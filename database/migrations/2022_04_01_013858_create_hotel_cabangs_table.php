@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('hotels_id')->nullable()->index('hotels_id_fk3_idx');
             $table->string('nama');
             $table->string('alamat', 25);
+            $table->string('photo');
             $table->string('created_by');
             $table->enum('status', ['aktif', 'non_aktif']);
             $table->timestamps();

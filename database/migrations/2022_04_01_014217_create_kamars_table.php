@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hotels', function (Blueprint $table) {
+        Schema::create('kamars', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id')->nullable()->index('users_id_fk2_idx');
+            $table->foreignId('hotels_id')->nullable()->index('hotels_id_fk4_idx');
+            $table->foreignId('hotel_cabangs_id')->nullable()->index('hotel_cabangs_id_fk5_idx');
             $table->string('nama');
-            $table->string('alamat');
             $table->string('photo');
             $table->string('created_by');
             $table->enum('status', ['aktif', 'non_aktif']);
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hotels');
+        Schema::dropIfExists('kamars');
     }
 };
