@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('users_id')->nullable()->index('users_id_fk16_idx');
             $table->string('nama');
             $table->string('alamat');
+            $table->string('photo');
             $table->string('created_by');
             $table->enum('status', ['aktif', 'non_aktif']);
             $table->timestamps();
