@@ -13,18 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hotel_transaksis', function (Blueprint $table) {
+        Schema::create('kuliner_transaksi_metas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id')->nullable()->index('users_id_fk12_idx');
-            $table->foreignId('hotel_cabangs_id')->nullable()->index('hotel_cabangs_id_fk13_idx');
-            $table->string('tanggal', 25);
+            $table->foreignId('kuliner_transaksis_id')->nullable()->index('hotel_transaksis_id_fk25_idx');
+            // $table->foreignId('mbuh')->nullable()->index('mbuh_fk26_idx'); ogak eruh iki entuk teko ndi
             $table->double('harga');
             $table->integer('qty');
             $table->double('harga_total');
-            $table->double('biaya_admin');
-            $table->double('pajak');
-            $table->double('harga_final');
-            $table->text('json_item');
+            $table->text('json_produk');
             $table->string('created_by');
             $table->enum('status', ['aktif', 'non_aktif']);
             $table->timestamps();
@@ -38,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hotel_transaksis');
+        Schema::dropIfExists('kuliner_transaksi_metas');
     }
 };

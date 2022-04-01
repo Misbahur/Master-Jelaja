@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hotel_transaksis', function (Blueprint $table) {
+        Schema::create('kuliner_transaksis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id')->nullable()->index('users_id_fk12_idx');
-            $table->foreignId('hotel_cabangs_id')->nullable()->index('hotel_cabangs_id_fk13_idx');
+            $table->foreignId('users_id')->nullable()->index('users_id_fk23_idx');
+            $table->foreignId('kuliner_cabangs_id')->nullable()->index('hotel_cabangs_id_fk24_idx');
             $table->string('tanggal', 25);
             $table->double('harga');
             $table->integer('qty');
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hotel_transaksis');
+        Schema::dropIfExists('kuliner_transaksis');
     }
 };
