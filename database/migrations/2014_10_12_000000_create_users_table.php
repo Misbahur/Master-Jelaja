@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('roles_id')->nullable()->index('roles_id_fk1_idx');
+            $table->foreignId('roles_id')->nullable()->index('roles_id_fk1_idx');
             $table->string('jwt_token', 64)->nullable();
             $table->string('fcm_token', 64)->nullable();
             $table->string('nama');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('photo');
             $table->string('nomer_telepon', 14)->nullable();
             $table->string('nomer_ponsel', 14)->nullable();
-            $table->srting('tempat_lahir')->nullable();
+            $table->string('tempat_lahir')->nullable();
             $table->string('tanggal_lahir', 25)->nullable();
             $table->string('alamat')->nullable();
             $table->string('nomor_ktp', 18)->nullable();
@@ -33,7 +33,6 @@ return new class extends Migration
             $table->string('created_by');
             // $table->rememberToken();
             $table->timestamps();
-            $table->forign('roles_id')->references('id')->on('roles');
         });
     }
 

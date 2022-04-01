@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('users_id')->nullable()->index('users_id_fk2_idx');
+            $table->string('nama');
+            $table->string('alamat');
+            $table->string('created_by');
+            $table->enum('status', ['aktif', 'non_aktif']);
             $table->timestamps();
         });
     }
